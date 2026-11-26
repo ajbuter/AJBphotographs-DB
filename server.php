@@ -726,7 +726,12 @@ try {
             header('Content-Type: text/csv; charset=utf-8');
             header('Content-Disposition: attachment; filename="n715_export.csv"');
             $out = fopen('php://output', 'w');
-            if ($rows) { fputcsv($out, array_keys($rows[0])); foreach ($rows as $r) fputcsv($out, $r); }
+        if ($rows) {
+            fputcsv($out, array_keys($rows[0]), ',', '"', '');
+            foreach ($rows as $r) {
+                fputcsv($out, $r, ',', '"', '');
+            }
+        }
             fclose($out); exit;
         }
         // JSON output (default)
@@ -747,9 +752,9 @@ try {
                 $d = json_decode((string) file_get_contents($tmp), true);
                 $records = is_array($d['records'] ?? null) ? $d['records'] : (is_array($d) ? $d : []);
             } elseif ($ext === 'csv' && ($fp = fopen($tmp, 'r')) !== false) {
-                $hdr = fgetcsv($fp);
+                $hdr = fgetcsv($fp, 0, ',', '"', '');
                 if (is_array($hdr)) {
-                    while (($row = fgetcsv($fp)) !== false) {
+                    while (($row = fgetcsv($fp, 0, ',', '"', '')) !== false) {
                         if (count($row) === count($hdr)) $records[] = array_combine($hdr, $row);
                     }
                 }
