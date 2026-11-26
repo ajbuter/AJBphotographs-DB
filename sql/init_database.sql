@@ -224,16 +224,16 @@ INSERT INTO GENERAL_USER (user_id) VALUES
 
 -- Collections
 INSERT INTO COLLECTION (collection_id, name, description) VALUES
-('col_athletics', 'Missouri S&T Athletics', 'Dummy Description'),
-('col_portfolio', 'Personal Portfolio',     'Dummy Description');
+('col_athletics', 'Missouri S&T Athletics', 'Dummy Description 1'),
+('col_portfolio', 'Personal Portfolio',     'Dummy Description 2');
 
 -- Categories (aligns cleanly with ajbphotographs.com)
 INSERT INTO CATEGORY (category_id, name, description, collection_id) VALUES
-('sports',        'Sports',        'Dummy Description', 'col_athletics'),
-('automotive',    'Automotive',    'Dummy Description', 'col_portfolio'),
-('portraits',     'Portraits',     'Dummy Description', 'col_portfolio'),
-('environmental', 'Environmental', 'Dummy Description', 'col_portfolio'),
-('events',        'Events',        'Dummy Description', 'col_portfolio');
+('sports',        'Sports',        'Dummy Description 3', 'col_athletics'),
+('automotive',    'Automotive',    'Dummy Description 4', 'col_portfolio'),
+('portraits',     'Portraits',     'Dummy Description 5', 'col_portfolio'),
+('environmental', 'Environmental', 'Dummy Description 6', 'col_portfolio'),
+('events',        'Events',        'Dummy Description 7', 'col_portfolio');
 
 -- Albums (event_date stored as UNIX timestamps)
 INSERT INTO ALBUM (album_id, title, location, event_date, category_id) VALUES
