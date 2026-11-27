@@ -22,11 +22,11 @@ function getDb(): PDO
         return $pdo;
     }
 
-    $host = getenv('DB_HOST') ?: '127.0.0.1';
+    $host = getenv('DB_HOST') ?: 'db5022005240.hosting-data.io';
     $port = getenv('DB_PORT') ?: '3306';
-    $name = getenv('DB_NAME') ?: 'n715_image_db';
-    $user = getenv('DB_USER') ?: 'n715_app';
-    $pass = getenv('DB_PASS') ?: 'N715_ImgDB_2026!';
+    $name = getenv('DB_NAME') ?: 'dbs16389798';
+    $user = getenv('DB_USER') ?: 'dbu419306';
+    $pass = getenv('DB_PASS') ?: 'DenaliButterAdmin';
 
     $dsn = sprintf('mysql:host=%s;port=%s;dbname=%s;charset=utf8mb4', $host, $port, $name);
 

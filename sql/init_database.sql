@@ -23,19 +23,6 @@
 -- -----------------------------------------------------------------------------
 -- DATABASE & APPLICATION USER CREDENTIALS
 -- -----------------------------------------------------------------------------
-DROP DATABASE IF EXISTS n715_image_db;
-CREATE DATABASE n715_image_db
-  CHARACTER SET utf8mb4
-  COLLATE utf8mb4_unicode_ci;
-
--- Create application DB user
-CREATE USER IF NOT EXISTS 'n715_app'@'localhost' IDENTIFIED BY 'N715_ImgDB_2026!';
-CREATE USER IF NOT EXISTS 'n715_app'@'127.0.0.1' IDENTIFIED BY 'N715_ImgDB_2026!';
-
-GRANT SELECT, INSERT, UPDATE, DELETE ON n715_image_db.* TO 'n715_app'@'localhost';
-GRANT SELECT, INSERT, UPDATE, DELETE ON n715_image_db.* TO 'n715_app'@'127.0.0.1';
-FLUSH PRIVILEGES;
-
 USE n715_image_db;
 
 -- COLLECTION

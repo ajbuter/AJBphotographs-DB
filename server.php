@@ -282,7 +282,7 @@ if (session_status() === PHP_SESSION_NONE) {
 // ---------------------------------------------------------------------------
 
 // Get logged-in user from session (or local auto-admin if enabled)
-function currentUser(): ?array {
+function currentUser(): ?array { 
     if (!empty($_SESSION['user_id'])) {
         return [
             'user_id' => $_SESSION['user_id'],
